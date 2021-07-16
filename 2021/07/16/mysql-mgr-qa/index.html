@@ -13,7 +13,7 @@
 
 
 
-<title>归档: 2021/7 | 大脑指挥手</title>
+<title>MySQL MGR 问题记录 | 大脑指挥手</title>
 
 
 
@@ -116,31 +116,68 @@
     }
 </script>
             <div class="main">
-                <div class="post-wrap archive">
+                <div class="container">
     
     
-        
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">MySQL MGR 问题记录</h1>
+            
+                <div class="post-meta">
+                    
+                        <a itemprop="author" rel="author" href="/">张小五</a>
+                    
+
+                    
+                        <span class="post-time">
+                         作于 <a href="#">2021年07月16日</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>Q: SQL错误（3098）：The table does not comply with the requirements by an external plugin. </p>
+<p>A: 该问题发生在insert xxx select … from yyyy，最后原因定位在yyyy表没有主键。单查询select语句并没用问题，但加上insert就不行。yyyy表添加主键后问题解决。</p>
+<hr>
+<p>Q: ERROR 1290 (HY000): The MySQL server is running with the –super-read-only option so it cannot execute this statement</p>
+<p>A: 该问题发生在创建数据库时，猜测可能是因为数据库服务已经开启MGR功能，于是stop group_replication，问题依然不能解决，后重启数据库服务，先创建数据库，再开启MGR，没用问题了。</p>
+
+        </div>
 
         
-            <h3>2021</h3>
-        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/mysql/"># mysql</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/07/16/hello-world/">Hello World</a>
+            
+        </section>
 
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2021/07/16/mysql-mgr-qa/">MySQL MGR 问题记录</a>
-            <span class="archive-item-date">2021年07月16日</span>
-        </article>
-    
-        
 
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2021/07/16/hello-world/">Hello World</a>
-            <span class="archive-item-date">2021年07月16日</span>
-        </article>
-    
-    
+    </article>
 </div>
+
             </div>
             <footer id="footer" class="footer">
     <div class="copyright">
