@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="张小五">
+
+
+
+
+
+<title>[04741计算机网络原理]笔记-第1章 计算机网络概述 | 自考本科-网络工程</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自考本科-网络工程</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自考本科-网络工程</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[04741计算机网络原理]笔记-第1章 计算机网络概述</h1>
+            
+                <div class="post-meta">
+                    
+                    
+                        <a itemprop="author" rel="author" href="/">张小五</a>
+                      
+
+                    
+                        <span class="post-time">
+                         作于 <a href="#">2021年09月19日</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="计算机网络的定义"><a href="#计算机网络的定义" class="headerlink" title="计算机网络的定义"></a>计算机网络的定义</h2><p>从技术范畴来看，计算机网络是计算机技术与通信技术相互融合的产物。<br>计算机网络是利用通信设备与通信链路或者通信网络，互连位置不同、功能自治的计算机系统，并遵循一定的规则实现计算机系统之间信息交换。<br>计算机网络是互连的、自治的计算机的集合。</p>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p>计算机网络中的实体在进行数据交换的过程中也必须遵循一些规则或约定，这些规则或约定就是网络协议。<br><strong>协议</strong>是网络通信实体之间在数据交换过程中需要遵循的规则或约定，是计算机网络有序运行的重要保证。<br>协议约定了实体之间交换的信息类型、信息各部分的含义、信息交换顺序以及收到特定信息或出现异常时应采取的行为。<br>任何一个协议都会显式或隐式地定义3个基本要素： 语法、语义和时序，称为协议三要素。<br><em>语法</em>定义实体之间交换信息的格式与结构，或者定义实体之间传输信号的电平等。<br><em>语义</em>定义实体之间交换的信息中需要发送哪些控制信息，这些信息的具体含义，以及针对不同含义的控制信息，接收信息端应如何响应。有的协议还需要进行差错检测以及定义彼此采用何种差错编码、采取何种差错处理机制等。<br><em>时序</em>也称为同步，定义实体之间交换信息的顺序以及如何匹配或使用彼此的速度。</p>
+<h2 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a>计算机网络的功能</h2><p>计算机网络的功能是在不同主机之间实现快速的信息交换。通过信息交换，计算机网络可实现资源共享这一核心功能，包括硬件资源共享、软件资源共享和信息资源共享等。</p>
+<h2 id="计算机网络的分类"><a href="#计算机网络的分类" class="headerlink" title="计算机网络的分类"></a>计算机网络的分类</h2><p><strong>按覆盖范围</strong>计算机网络可分为：个域网(1-10m)、局域网(10-1km)、城域网(5-50km)、广域网(几十km+)。<br><strong>按拓扑结构</strong>计算机网络可分为：星形拓扑结构、总线型拓扑结构、环形拓扑结构、网状拓扑结构、树形拓扑结构和混合拓扑结构等。其中，星形多见于局域网、个域网，网状多见于广域网、核心网，树形多见于局域网。<br><strong>按交换方式</strong>计算机网络可分为：电路交换网络、报文交换网络和分组交换网络。<br><strong>按用户属性</strong>计算机网络可分为：公用网、私有网。</p>
+<h2 id="计算计网络的机构"><a href="#计算计网络的机构" class="headerlink" title="计算计网络的机构"></a>计算计网络的机构</h2><p>大规模现代计算机网络的结构包括网络边缘、接入网络与核心网络3部分。<br>常见的接入网络技术有： 电话拨号接入、非对称数字用户线路ADSL、混合光线同轴电缆HFC接入网络、局域网、移动接入网络。<br>网络核心是由通信链路互连的分组交换设备构成的网络，作用是实现网络边缘中主机之间地数据中继与转发。比较典型的分组交换设备是路由器和交换机等。<br>网络核心如何实现数据的中继与转发？答案就是数据交换。</p>
+<h2 id="数据交换网络"><a href="#数据交换网络" class="headerlink" title="数据交换网络"></a>数据交换网络</h2><p>为了连接更大范围、更多数量的主机，可以将许多交换设备互联，构成一个数据中继与转发的“中间网络”，然后再将主机连接到距离较近的交换设备上，主机之间地数据传输通过“中间网络”实现中继与转发。<br>这个中间网络不需要关心所传输数据的内容，而只是为这些数据从一个结点到另一个结点直至到达目的结点提供数据中继与交换的功能，因此，称之为数据交换网络，组成交换网络的结点(交换设备)称之为交换结点，交换结点和传输介质的集合称为通信子网，即网络核心。<br>数据交换是实现在大规模网络核心上进行数据传输的技术基础。常见的数据交换技术包括电路交换、报文交换和分组交换，与之对应的网络分别称为电路交换网络、报文交换网络和分组交换网络。</p>
+<h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><p>利用电路交换进行通信包括建立电路、传输数据和拆除电路3个阶段。</p>
+<p>电路建立之后在两个主机之间地每一段物理链路上都为双方的通信预留了相应的带宽，这个带宽在双方通信期间将一直保留并独占。<br>为了充分利用物理链路的带宽，通常会采用相关的信道复用技术，如频分多路复用、时分多路复用等。</p>
+<p>电路建立后，主机之间就可以进行数据传输了。被传输的数据可以使数字数据也可以是模拟数据，数据的传输可以是单工也可以是双工。</p>
+<p>拆除电路的释放信号可以由两个通信主机之间任何一方发起并完成，释放信号必须传送到电路所经过的各个节点。</p>
+<p>电路交换的特点是有连接的，在通信时需要先建立电路连接，在通信过程中独占一个信道，通信结束后拆除电路连接。<br>电路交换的优点是实时性高，时延和时延抖动都较小；缺点是对于突发性数据传输，信道利用率低，且传输速率单一。<br>电路交换主要适用于语音和视频这类实时性强的业务。</p>
+<h2 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h2><p>报文交换也称为消息交换，其工作过程为：发送方把要发送的信息附加上发送/接收主机的地址及其他控制信息，构成一个完整的报文（Message）。然后以报文为单位在交换网络的各结点之间以存储-转发的方式传送，直至送达目的主机。一个报文在每个结点的延迟时间，等于接收报文所需的时间加上同下一个结点转发所需的排队延迟时间之和。<br>现代计算机网络没有采用报文交换技术的。</p>
+<h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><p>分组交换是目前计算机网络广泛采用的技术。<br>分组交换需要将待传输数据（即报文）分割成较小的数据块，每个数据块附加上地址、序号等控制信息构成数据分组（packet），每个分许独立传输到目的地，目的地将收到的分组重新组装，还原为报文。</p>
+<p><strong>分组交换与报文交换相比优缺点</strong><br>分组交换与报文交换相比，两者都采用存储-转发交换方式，最主要的区别在于是否将报文拆分为更小的分组。<br><em>优点：</em></p>
+<ol>
+<li>交换设备存储容量要求低</li>
+<li>交换速度快</li>
+<li>可靠传输效率高</li>
+<li>更加公平</li>
+</ol>
+<p><em>缺点：</em><br>分组交换在拆分与组装分组过程中，一方面会消耗一定的计算资源，另一方面还需要附加更多的控制信息，会在一定程度上降低有效数据传输效率。</p>
+<h2 id="计算机网络性能"><a href="#计算机网络性能" class="headerlink" title="计算机网络性能"></a>计算机网络性能</h2><p>计算机网络的主要性能指标包括带宽、速率、时延、丢包率、吞吐量、时延带宽积。<br><strong>速率</strong>是指网络单位时间内传送的数据量，用以描述网络传输数据的快慢，也称为数据传输速率或数据速率，基本单位是bit/s（位每秒）。有时也会用带宽描述速率。<br><strong>时延</strong>也称为延迟，是指数据从网络中的一个结点到达另一结点所需要的时间。分组的每跳传输过程主要产生4类时间延迟：结点处理时延、排队时延、传输时延和传播时延。<br><strong>时延带宽积</strong>是指一段物理链路的传播时延与链路带宽的乘积。<br><strong>吞吐量</strong>经常用于度量网络的实际数据传送能力，即网络实际可以达到的源主机到目的主机的数据传送速率。</p>
+<p>计算机网络中，通常将连接两个结点的直接链路称为一个“跳步”（hop），简称“跳”。</p>
+<h2 id="计算机网络分层体系结构"><a href="#计算机网络分层体系结构" class="headerlink" title="计算机网络分层体系结构"></a>计算机网络分层体系结构</h2><p>分层的核心思路是上一层的功能建立在下一层的功能基础上，并且在每一层内均要遵守一定的通信规则，即协议。<br>典型的层次化体系结构有OSI参考模型和TCP/IP参考模型两种。</p>
+<h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><p>OSI参考模型从下到上依次为：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。<br><strong>1.物理层</strong>的主要功能是在传输介质上实现无结构比特流传输。<br><strong>2.数据链路层</strong>的主要功能是实现在相邻节点之间数据可靠而有效的传输。<br><strong>3.网络层</strong>解决的核心问题是如何将分组通过交换网络传送至目的主机，因此，网络层的主要功能是数据转发与路由。<br><strong>4.传输层</strong>的功能主要包括复用/分解、端到端的可靠数据传输、连接控制、流量控制和拥塞控制机制等。<br><strong>5.会话层</strong>是指用户与用户的连接，已经名存实亡。<br><strong>6.表示层</strong>主要用于处理应用实体间交换数据的语法，其目的是解决格式和数据表示的差异，从而为应用层提供一个一致的数据格式，使字符、格式等有差异的设备之间相互通信。<br><strong>7.应用层</strong>为用户提供了一个使用网络应用的“接口”。很多时候，会话层、表示层的功能也都在应用层进行实现。</p>
+<p>OSI参考模型的7层中，1-3层主要是完成数据交换和数据传输，称之为网络低层；5-7层主要是完成信息处理服务的功能，称之为网络高层；低层与高层之间由第4层衔接。</p>
+<h2 id="OSI参考模型有关术语"><a href="#OSI参考模型有关术语" class="headerlink" title="OSI参考模型有关术语"></a>OSI参考模型有关术语</h2><p><strong>数据单元</strong><br>在层的实体之间传送的比特组称为数据单元。在对等层之间传送数据单元是按照本层协议进行的，这时的数据单元称为协议数据单元（PDU）。<br>PDU在不同层往往有不同的叫法：<br>物理层：位流或比特流<br>数据链路层：帧<br>网络层：分组或包<br>传输层：数据段或报文段<br>应用层：报文</p>
+<p><strong>SAP</strong><br>相邻层间的服务是通过其接口面上的服务访问点（Service Access Point, SAP）进行的，N层SAP就是（N+1）层可以访问N层的地方。每个SAP都有一个唯一的地址号码。</p>
+<h2 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h2><p>OSI参考模型的重要意义在于它是一种计算机网络的理论体系结构。<br>因特网的体系结构是用TCP/IP参考模型进行描述。<br>TCP/IP参考模型包括4层：应用层、传输层、网络互连层、网络接口层。<br>传输层负责在网络层和应用层之间传递消息，丝毫不会涉及消息如何在网络中传输，这个任务交给下面的网络互连层去解决。<br>TCP/IP参考模型的传输层主要包括面向连接、提供可靠数据流传输的传输控制协议TCP和无连接不提供可靠数据传输的用户数据报协议UDP。<br>网络互连层是整个TCP/IP参考模型的核心，主要解决把数据分组发往目的网络或主机的问题。网络互连层的核心协议是IP，负责定义分组的格式和传输。还包括互联网控制协议ICMP、互联网多播组管理协议IGMP以及路由协议，如BGP、OSPF、RIP等。</p>
+<h2 id="五层参考模型"><a href="#五层参考模型" class="headerlink" title="五层参考模型"></a>五层参考模型</h2><p>五层参考模型包括：物理层、数据链路层、网络层、传输层与应用层。这是近年来，在描述计算机网络中最常用、最接近实际网络的参考模型。</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/"># 计算机网络原理</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/03/18/zk-04751-jdt/">[04751计算机网络安全]笔记-简答题</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 张小五 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
