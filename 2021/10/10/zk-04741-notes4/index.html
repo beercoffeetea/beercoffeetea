@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="张小五">
+
+
+
+
+
+<title>[04741计算机网络原理]笔记-第4章 网络层 | 自考本科-网络工程</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自考本科-网络工程</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自考本科-网络工程</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[04741计算机网络原理]笔记-第4章 网络层</h1>
+            
+                <div class="post-meta">
+                    
+                    
+                        <a itemprop="author" rel="author" href="/">张小五</a>
+                      
+
+                    
+                        <span class="post-time">
+                         作于 <a href="#">2021年10月10日</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p><em>课后简答题</em><br><strong>网络层提供的主要功能是什么</strong><br>网络层提供的服务主要包括转发、路由以及连接管理。</p>
+<p><strong>说明转发和路由的含义，有什么区别和联系</strong><br>转发：当通过一条输入链路接收到一个分组后，路由器需要决策通过哪条输出链路将分组发送出去，并将分组从输入接口转移到输出接口。<br>路由：当分组从源主机流向目的主机时，必须通过某种方式决定分组经过的路由或路径。<br>路由选择和转发之间是互相作用的，路由器运行路由协议在网络上交换或收集计算路由所需的信息，并基于某种路由选择算法计算路由，然后将路由信息存储到路由器的转发表中。路由器在转发分组时，查询转发表，决策如何转发分组。</p>
+<p><strong>对比虚电路网络和数据报网络的优缺点</strong><br>虚电路交换与数据报交换的主要差别表现为：是将顺序控制、差错控制和流量控制等功能交由网络来完成，还是由端系统来完成。<br>虚电路网络通常由网络完成这些功能，向端系统提供无差错数据传送服务，而端系统则可以很简单；数据报网络通常网络实现的功能很简单，如基本的路由与转发，顺序控制、差错控制和流量控制等功能则由端系统来完成。</p>
+<p><strong>虚电路网络如何建立虚电路？虚电路网络分组转发的依据是什么</strong><br>第一，从源主机到目的主机之间建立一条网络层逻辑连接；第二，在该路径上的每条链路都分配一个虚电路标识；第三，在该路径上每台分组交换机的转发表中记录虚电路标识的接续关系。<br>虚电路网络分组转发的依据是虚电路标识（VCID）。</p>
+<p><strong>实现异构网络互连的主要方法有哪些？典型实现异构网络互连的网络设备是什么</strong><br>实现异构网络互连的基本策略主要包括协议转换和构建虚拟互联网络。<br>实现异构网络互连的设备有：中继器、集线器、交换机、网桥、路由器和网关等。</p>
+<p><strong>路由器有哪些部分组成？各部分主要功能是什么</strong><br>路由器由输入端口、交换结构、输出端口与路由处理器组成。<br>输入端口负责从物理接口接收信号，还原数据链路层帧，提取IP数据报，根据IP数据报的目的IP地址检索路由表，决策需要将该IP数据报交换到哪个输出端口。<br>交换结构完成将输入端口的IP数据报交换到指定的输出端口。主要包括基于内存交换、基于总线交换和基于网络交换。基于内存交换的性能最差，基于网络交换的性能最好。<br>输出端口首先提供一个缓存排队功能，排队交换到该端口的待发送分组，并从队列中不断取出分组进行数据链路层数据帧的封装，通过物理线路端接发送出去。<br>路由处理器就是路由器的CPU，负责执行路由器的各种指令，包括路由协议的运行、路由计算以及路由表的更新维护等。</p>
+<p><strong>网络层出现拥塞的原因是什么？有哪些网络层拥塞控制策略？</strong><br>原因：缓冲区容量有限；传输线路的带宽有限；网络结点的处理能力有限；网络中某些部分发生了故障。<br>策略：流量感知路由、准入控制、流量调节、负载脱落。</p>
+<p><strong>简述ICMP的主要功能</strong><br>ICMP的主要功能是进行主机或路由器间的网络层差错报告与网络探测。</p>
+<p><strong>解释网络地址转换（NAT）的工作原理，如何实现NAT穿透</strong><br>NAT工作原理：对于从内网出去，进入公共互联网的IP数据报，将其源IP地址替换为NAT服务器拥有的合法的公共IP地址，同时替换源端口号，并将替换关系记录到NAT转换表中；对于从公共互联网返回的IP数据报，依据其目的IP地址与目的端口号检索NAT转换表，并利用检索到的内部私有IP地址与对应的端口号替换目的IP地址和目的端口号，然后将IP数据报转发到内部网络。<br>实现NAT穿透就是在外网主机与内网主机发起通信之间，先在NAT转换表中建立好内网到外网的映射。</p>
+<p><strong>IPv6提出的动力是什么？IPv6相比于IPv4其数据报格式有什么特点</strong><br>动力是IPv4地址的不足。<br>首先，IPv4首部中与分片相关的字段已经不见了。其次，首部校验和字段也没有出现在IPv6数据报中。最后，选项字段也不再是IPv6数据报基本首部的一部分了。</p>
+<p><strong>简述链路状态路由选择算法与距离向量路由选择算法的算法过程</strong></p>
+<p><strong>请举例说明为什么距离向量路由选择算法可能产生无穷计数问题，可以采取哪些措施消减这一问题</strong><br>解决无穷计数问题的方案有：毒性逆转技术、定义最大有效费用度量值。</p>
+<p><strong>比较RIP、OSPF、BGP的异同</strong><br>RIP是基于距离向量路由选择算法，OSPF基于链路状态路由选择算法，BGP可以看做是路径向量路由选择算法。<br>RIP报文封装到UDP报文段中传输，OSPF报文封装到IP数据报中传输，BGP报文封装到TCP报文段中传输。</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/"># 计算机网络原理</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/10/06/zk-04741-notes3/">[04741计算机网络原理]笔记-第3章 传输层</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 张小五 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
