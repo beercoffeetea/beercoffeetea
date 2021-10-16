@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="张小五">
+
+
+
+
+
+<title>[04741计算机网络原理]笔记-第5章 数据链路层与局域网 | 自考本科-网络工程</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自考本科-网络工程</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自考本科-网络工程</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[04741计算机网络原理]笔记-第5章 数据链路层与局域网</h1>
+            
+                <div class="post-meta">
+                    
+                    
+                        <a itemprop="author" rel="author" href="/">张小五</a>
+                      
+
+                    
+                        <span class="post-time">
+                         作于 <a href="#">2021年10月14日</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>典型的差错控制方式包括检错重发、前向纠错、反馈校验和检错丢弃4种基本方式。<br>典型的差错编码有奇偶校验码、汉明码以及循环冗余码（CRC）。</p>
+<p>多路访问控制协议用于协调广播信道的共享使用，主要包括3种类型的MAC协议：信道划分MAC协议、随机访问MAC协议、受控接入MAC协议。</p>
+<p>以太网是目前最主流、应用最广泛的局域网。以太网的MAC协议是CSMA/CD，当发生冲突时，采用二进制指数退避算法计算随机退避时间。<br>以太网最短帧长度为64字节，数据字段最少46字节。</p>
+<p>PPP和HDLC协议是典型的点对点链路协议。PPP只用于点对点链路，HDLC还可以应用于点对多点链路。PPP支持链路层参数与网络层地址等的协商。<br>为了支持透明数据传输，PPP采用字节填充转义，HDLC采用位填充转义。</p>
+<p><em>课后简答题</em><br><strong>链路层协议能够向网络层提供哪些可能的服务</strong><br>数据链路是在物理线路之上，基于通信协议来控制数据帧传输的逻辑数据通路。<br>数据链路层可以提供组帧、差错控制、链路层寻址、多路访问控制、可靠传输、流量控制等服务。</p>
+<p><strong>为什么有些网络用纠错编码而不用检查和重传机制？请给出两个理由</strong></p>
+<p><strong>差错编码的检错或纠错能力与什么有关？试举例说明</strong><br>差错编码的检错或纠错能力与该差错编码的编码集到的汉明距离有关。</p>
+<p><strong>考虑在低负载情况下，纯ALOHA和时隙ALOHA相比，哪个延迟更小</strong><br>纯ALOHA</p>
+<p><strong>ARP查询为什么要在广播帧中发送呢？ARP响应为什么要在一个特定目的的MAC地址的帧中发送呢？</strong><br>ARP查询分组的目的是询问子网上所有其他的主机和路由器，以确定对应于要解析的IP地址的MAC地址。<br>ARP响应时已经知道目的主机的MAC地址，所以直接发送包含目的主机MAC地址的数据帧。</p>
+<p><strong>试比较10BASE-T、100BASE-T和千兆位以太网的共同点与区别</strong><br>它们都是建立在以太网标准之上的技术，并利用了原以太网标准虽规定的全部技术规范。<br>10BASE-T的传输速率为10Mbit/s，<br>100BASE-T的传输速率为100Mbit/s,<br>千兆位以太网的传输速率为1000Mbit/s。</p>
+<p><strong>什么是VLAN？划分为VLAN主要有几种方法？</strong><br>VLAN是指虚拟局域网，是一种实现广播域分隔的技术。<br>划分VLAN的方法有：基于交换机端口划分、基于MAC地址划分、基于上层协议类型或地址划分。</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/"># 计算机网络原理</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/10/14/zk-04741-notes6/">[04741计算机网络原理]笔记-第6章 物理层</a>
+            
+            
+            <a class="next" rel="next" href="/2021/10/10/zk-04741-notes4/">[04741计算机网络原理]笔记-第4章 网络层</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 张小五 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="张小五">
+
+
+
+
+
+<title>[04741计算机网络原理]笔记-第6章 物理层 | 自考本科-网络工程</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自考本科-网络工程</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自考本科-网络工程</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[04741计算机网络原理]笔记-第6章 物理层</h1>
+            
+                <div class="post-meta">
+                    
+                    
+                        <a itemprop="author" rel="author" href="/">张小五</a>
+                      
+
+                    
+                        <span class="post-time">
+                         作于 <a href="#">2021年10月14日</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p><em>课后简答题</em><br><strong>数字通信和数据通信有何不同</strong><br>数字通信系统是指信道中传输的信号是离散的数字信号，而数据通信系统是指在信源和信宿端处理的是二进制数据，在信道中传输的信号可以是模拟信号，也可以是数字信号。</p>
+<p><strong>简述单向通信、双向交替通信和双向同时通信的特点，并画出通信系统模型</strong><br>单向通信是指任何时间都只能有一个方向的通信，而没有反方向的交互。<br>双向交替通信是指通信的双方都可以发送信息，但不能双方同时发送。<br>双向同时通信是指通信双方可以同时发送和接收信息。</p>
+<p>任何一种通信系统的核心都应该包括信源、发送设备、信道、接收设备、信宿和噪声源。</p>
+<p><strong>常见的物理介质有哪些？列举不同的物理介质并说明其主要特性。</strong><br>常用的物理介质分为导引型传输介质和非导引型传输介质。<br>导引型传输介质有架空明线、双绞线电缆、同轴电缆、光纤等。<br>非导引型传输介质有地波传播、天波传播、视线传播等。</p>
+<p><strong>什么是信道？信道有哪几种主要分类？每一类信道的主要特点是什么？</strong><br>信道是通信系统中连接发送端与接收端的通信设备，实现从发送端到接收端的信号传送。<br>狭义信道就是物理介质；广义的信道按功能可以划分为调制信道和编码信道。</p>
+<p>调制信道是指信号从调制器的输出端传输到解调器的输入经过的部分，其特点有：<br>1.信道总具有输入信号端和输出信号端；<br>2.信道一般是线性的；<br>3.信道是因果的；<br>4.信道使通过的信号发生畸变；<br>5.信道中存在噪声。</p>
+<p>编码信道是指数字信号由编码器输出端传输到译码器输入端经过的部分。</p>
+<p><strong>数字基带传输系统主要有哪些部分组成？各部分主要功能是什么？</strong><br>数字基带传输系统主要由信号形成器、信道、接收滤波器、抽样判决器以及同步提取等部分组成。<br>信号形成器的作用就是把原始的数字基带信号变换为适合信道传输特性的数字基带信号。<br>接收滤波器的作用就是要消除噪声，得到有利于抽样判决的基带波形。<br>抽样判决器则基于同步提取从信号中提取的定时脉冲，对接收滤波器输出的基带波形进行抽样判决，再生数字基带信号。</p>
+<p><strong>物理接口特性有哪些？</strong><br>物理接口规范主要定义DTE与DCE之间的接口特性，主要包括机械特性、电气特性、功能特性和规程特性。</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/"># 计算机网络原理</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/10/15/zk-04741-notes7/">[04741计算机网络原理]笔记-第7章 无线与移动网络</a>
+            
+            
+            <a class="next" rel="next" href="/2021/10/14/zk-04741-notes5/">[04741计算机网络原理]笔记-第5章 数据链路层与局域网</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 张小五 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
